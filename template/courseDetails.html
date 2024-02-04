@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    
+{{details.course_name}}
+<img class="img-fluid" src="/media/{{details.image}}" alt="">
+{{details.video_file}}
+
+{% endblock %}
+
+

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Header Start -->
+    <div class="container-fluid page-header" style="margin-bottom: 90px;">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center" style="min-height: 300px">
+                <h3 class="display-4 text-white text-uppercase">Login</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Login</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <center>
+        <div class="col-lg-5">
+            <div class="card border-0">
+                <div class="card-header bg-light text-center p-4">
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Login</h5>
+                </div>
+                <div class="card-body rounded-bottom bg-primary p-5">
+                    <form>
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control border-0 p-4" name="u" id="username" placeholder="username" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control border-0 p-4" name="p" id="password" placeholder="password" required="required" />
+                        </div>
+                        <div>
+                            <button class="btn btn-dark btn-block border-0 py-3" type="submit">Log in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        {% if messages %}
+        <ul>
+            {% for msg in messages %}
+            <li>{{ msg }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    </center>
+
+{% endblock %}
+
+
